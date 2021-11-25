@@ -1,0 +1,254 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="lets_try">Press the below button</label>
+  <br>
+  <input type="button" value="Press it" id="lets_try">
+</body>
+<script>
+  document.getElementById('lets_try').addEventListener('click',()=>{
+    alert("the button is pressed!!");
+  })
+  document.getElementById('lets_try').addEventListener('click',()=>{
+    alert("this is the secodn time executing the function when button is clicked only once");
+  })
+</script>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Select the food that you want to eat</p>
+  <select id="chose">
+    <option value="Chapati">Chapati</option>
+    <option>Rice</option>
+    <option>Maggi</option>
+    <option>Egg</option>
+  </select>
+</body>
+<script>
+  document.getElementById('chose').addEventListener('change',(e)=>{
+    alert("You are going to eat "+ e.target.value);
+  })
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>We are going to look for some of the mouse events</p>
+  <input type="button" value="Button" id="buttons">
+  <p id="mouse"></p>
+</body>
+
+<script>
+  document.getElementById('buttons').addEventListener('click',()=>{
+    document.getElementById('mouse').innerHTML += 'Mouse clicked<br>'
+  })
+  document.getElementById('buttons').addEventListener('mouseover',()=>{
+    document.getElementById('mouse').innerHTML += 'Mouse Curser is inside the button area <br>'
+  })
+  document.getElementById('buttons').addEventListener('mouseout',()=>{
+    document.getElementById('mouse').innerHTML += 'Mouse Curser is outside the button area<br>'
+  })
+  
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="text-area">Enter some text in the text area:-</label>
+  <br>
+  <input type="text" id="text-area">
+  <p>Now when you click under the text area It's background color is going to change to yellow</p>
+  <p>Now when you click outside the text area It's background color is going to change to red</p>
+</body>
+<script>
+  document.getElementById('text-area').addEventListener('focus',()=>{
+    document.getElementById('text-area').style.background = 'yellow';
+  })
+  document.getElementById('text-area').addEventListener('blur',()=>{
+    document.getElementById('text-area').style.background = 'red';
+  })
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="text-area">Enter some text in the text area:-</label>
+  <br>
+  <input type="text" id="text-area">
+  <p>Now when you click under the text area It's background color is going to change to yellow</p>
+  <p>Now when you click outside the text area It's background color is going to change to red</p>
+</body>
+<script>
+  document.getElementById('text-area').addEventListener('focus',()=>{
+    document.getElementById('text-area').style.background = 'yellow';
+  })
+  document.getElementById('text-area').addEventListener('blur',()=>{
+    document.getElementById('text-area').style.background = 'red';
+  })
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="press">Press the below button to change the background color</label>
+  <br>
+  <input type="button" value="press me" id="press">
+</body>
+<script>
+  document.getElementById('press').addEventListener('click',()=>{
+    document.body.style.background = 'red'
+  })
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="first-name">Enter your First Name:-</label>
+  <input type="text" id="first-name">
+  <br>
+  <br>
+  <label for="second-name">Enter your Second Name:-</label>
+  <input type="text" id="second-name">
+  <br>
+  <br>
+  <label for="press_button">After filling the form press the below button</label>
+  <br>
+  <br>
+  <input type="button" value="press it" id="press_button">
+  <p id="Fname"></p>
+  <p id="Lname"></p>
+</body>
+<script>
+document.getElementById('press_button').addEventListener('click',()=>{
+  document.getElementById('Fname').innerHTML = document.getElementById('first-name').value;
+  document.getElementById('Lname').innerHTML = document.getElementById('second-name').value;
+})
+</script>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="num">Enter a number:- </label>
+  <br>
+  <input type="number" id="num">
+  <br>
+  <br>
+  <label for="press-it">Press the below button to get the answer</label>
+  <br>
+  <br>
+  <input type="button" value="Press it" id="press-it">
+  <p id="add"></p>
+</body>
+<script>
+  document.getElementById('press-it').addEventListener('click',()=>{
+    var x = document.getElementById('num').value;
+    if(x%3===0 || x%7===0)
+      document.getElementById('add').innerHTML = 'True';
+    else
+      document.getElementById('add').innerHTML = 'False';
+  })
+</script>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="first_number">Enter the First Number:-</label>
+  <input type="number" id="first_number">
+  <br>
+  <br>
+  <label for="second_number">Enter the Second Number:-</label>
+  <input type="number" id="second_number">
+  <br>
+  <br>
+  <label for="add">Clcik the add button to add the number</label>
+  <input type="button" value="Add" id="add">
+  <br>
+  <br>
+  <label for="multiply">Clcik the add button to multiply the number</label>
+  <input type="button" value="Multiply" id="multiply">
+  <p id="result"></p>
+</body>
+<script>
+  document.getElementById('add').addEventListener('click',()=>{
+    var x = document.getElementById('first_number').value;
+    x = Number(x);
+    var y = document.getElementById('second_number').value;
+    y = Number(y);
+    var z = x+y;
+    document.getElementById('result').innerHTML = 'The sum of ' + x + ' and ' + y + ' is ' + z;
+  })
+  document.getElementById('multiply').addEventListener('click',()=>{
+    var x = document.getElementById('first_number').value;
+    x = Number(x);
+    var y = document.getElementById('second_number').value;
+    y = Number(y);
+    var z = x*y;
+    document.getElementById('result').innerHTML = 'The multiply of ' + x + ' and ' + y + ' is ' + z;
+  })
+</script>
+</html> -->

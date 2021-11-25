@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>program 6</title>
+  </head>
+  <body>
+    <form>
+      <label for="first_number">Enter the First Number:</label>
+      <input type="number" id="first_number" />
+      <br />
+      <br />
+      <label for="second_number">Enter the Second Number:</label>
+      <input type="number" id="second_number" />
+      <p>Press the button according to your requirement</p>
+      <button type="submit" id="divide">Divide</button>
+      <button type="submit" id="Multiply">Multiply</button>
+      <p id="result"></p>
+    </form>
+    <script>
+      document.getElementById("divide").addEventListener("click", (e) => {
+        var a = document.getElementById("first_number").value;
+        a = Number(a);
+        var b = document.getElementById("second_number").value;
+        b = Number(b);
+        console.log(typeof a);
+        if (b == 0 || b == NaN)
+          document.getElementById("result").innerHTML =
+            "Division can not be performed when denominator is zero or NOT A NUMBER of datatype";
+        else {
+          var c = a / b;
+          document.getElementById("result").innerHTML =
+            "The division of " + a + " by " + b + " is " + c;
+        }
+        e.preventDefault();
+      });
+      document.getElementById("Multiply").addEventListener("click", (e) => {
+        var a = document.getElementById("first_number").value;
+        a = Number(a);
+        var b = document.getElementById("second_number").value;
+        b = Number(b);
+        console.log(typeof a);
+        var c = a * b;
+        document.getElementById("result").innerHTML =
+          "The sum of " + a + " and " + b + " is " + c;
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

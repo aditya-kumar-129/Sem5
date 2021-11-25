@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="text">Write a message:</label>
+      <br />
+      <input id="text" type="text" />
+    </form>
+    <script>
+      document.getElementById("text").addEventListener("keydown", () => {
+        document.getElementById("text").style.background = "yellow";
+      });
+      document.getElementById("text").addEventListener("keyup", () => {
+        document.getElementById("text").style.background = "red";
+      });
+    </script>
+  </body>
+</html>

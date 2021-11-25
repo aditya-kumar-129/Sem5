@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getInputUsingjavaScript</title>
+  </head>
+  <body>
+    <form>
+      <label for="first_name">Enter Your First Name:- </label>
+      <input type="text" id="first_name" />
+      <br />
+      <br />
+      <label for="last_name">Enter Your Last Name:- </label>
+      <input type="text" id="last_name" />
+      <p>Click "Try it" to display the value of each element in the form.</p>
+      <button type="submit" id="submit">Try</button>
+      <p id="enter_valid_input"></p>
+      <p id="output_first_name"></p>
+      <p id="output_last_name"></p>
+    </form>
+    <script>
+      document.getElementById("submit").addEventListener("click", (e) => {
+        if (e.target.value == "")
+          document.getElementById("enter_valid_input").innerHTML =
+            "Enter in text feild first";
+        else {
+          document.getElementById("output_first_name").innerHTML =
+            "Your First Name is " + document.getElementById("first_name").value;
+          document.getElementById("output_last_name").innerHTML =
+            "Your Last Name is " + document.getElementById("last_name").value;
+        }
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
