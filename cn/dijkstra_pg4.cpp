@@ -3,7 +3,7 @@ using namespace std;
 #define infinity 999
 void dij(int n, int v, int cost[10][10], int dist[])
 {
-  int u, count, flag[10]={0};
+  int u, count, flag[10] = { 0 };
   for (int i = 0; i < n; i++)
     dist[i] = cost[v][i]; // make the initial distance from the source node to all other node
   count = 1;
@@ -28,12 +28,14 @@ int main()
   cin >> n;
   cout << "\n Enter the cost matrix:\n";
   for (i = 0; i < n; i++)
+  {
     for (j = 0; j < n; j++)
     {
       cin >> cost[i][j];
       if (cost[i][j] == 0 && i != j) // basically it means that this node is not directly connected
         cost[i][j] = infinity;
     }
+  }
   cout << "\n Enter the source node:";
   cin >> v;
   dij(n, v, cost, dist);
@@ -41,6 +43,6 @@ int main()
   for (i = 0; i < n; i++)
     if (i != v)
       cout << v << "->" << i << ","
-           << "cost=" << dist[i] << endl;
+      << "cost=" << dist[i] << endl;
   return 0;
 }
