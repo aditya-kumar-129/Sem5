@@ -37,6 +37,7 @@ string encodeData(string data, string key)
   int len = key.length();
   string augData = data + std::string(len - 1, '0');
   string remain = mod2(augData, key);
+  cout<<"Remainder at the sender side is:- "<<remain<<endl;
   string encoded_data = data + remain;
   cout << "Remainder at encoded side :- " << remain << endl;
   cout << "Encoded Dataword at sender side is :- " << encoded_data << endl;
@@ -77,6 +78,5 @@ int main()
     else
       encode_data[pos] = '0';
   }
-  cout << "Encoded data to be sent to Receiver is :- " << encode_data << endl;
   decodedData(encode_data, key);
 }
