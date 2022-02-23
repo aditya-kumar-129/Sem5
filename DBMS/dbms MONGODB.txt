@@ -387,124 +387,167 @@ b.Retrieve boats of color :”Black”
         "DAY" : "2017-11-24"
 }
 
-4.
-Create the below tables, insert suitable tuples
-and perform the following operations using  MongoDB
-PART (PNO, PNAME, COLOUR)
-SHIPMENT (PNO, WNO, WNAME, QUANTITY, DATE)
-a.Find the parts shipped from warehouse :Wname”
-b.List the total quantity supplied from each warehouse 
+4.)Create the table, insert suitable tuples and perform the following operations using MongoDB
+1. Find the branch name for a given Branch_ID.
+2. List the total number of accounts for each customer.
 
-> db.shipment.insertMany([
-...   {"PNO":11,"PNAME":"bolts","COLOUR":"Black","WNO":99,"WNAME":"ABC","QUANTITY":45,"DATE":"2017-09-25"},
-...   {"PNO":12,"PNAME":"nuts","COLOUR":"Black","WNO":99,"WNAME":"ABC","QUANTITY":38,"DATE":"2017-09-28"},
-...   {"PNO":13,"PNAME":"chain","COLOUR":"white","WNO":97,"WNAME":"DEF","QUANTITY":68,"DATE":"2017-08-28"},
-...   {"PNO":14,"PNAME":"bolts","COLOUR":"Black","WNO":88,"WNAME":"PQR","QUANTITY":10,"DATE":"2017-01-25"},
-...   {"PNO":19,"PNAME":"wheel","COLOUR":"Blue","WNO":99,"WNAME":"ABC","QUANTITY":54,"DATE":"2017-01-01"}
-... ]);
+db.bank.insertMany([{"CID":"1","CNAME":"ADITYA","BID":10,"BNAME":"AGRA","ACCOUNT_NO":"101","ACCOUNT_TYPE":"SAVING","ACCOUNT_BALANCE":"25000","TID":"ABC","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"2000"},
+... {"CID":"1","CNAME":"ADITYA KUMAR","BID":10,"BNAME":"AGRA","ACCOUNT_NO":"101","ACCOUNT_TYPE":"CURRENT","ACCOUNT_BALANCE":"25000","TID":"ABC","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"2000"},
+... {"CID":"2","CNAME":"AGAM","BID":20,"BNAME":"DELHI","ACCOUNT_NO":"102","ACCOUNT_TYPE":"CURRENT","ACCOUNT_BALANCE":"35000","TID":"DEF","TRANSACTION_TYPE":"WITHDRAWL","TRANSACTION_AMOUNT":"5000"},
+... {"CID":"3","CNAME":"AKSHAT","BID":30,"BNAME":"PATNA","ACCOUNT_NO":"103","ACCOUNT_TYPE":"SAVING","ACCOUNT_BALANCE":"45000","TID":"GHI","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"4000"},
+... {"CID":"3","CNAME":"AKSHAT SAXENA","BID":30,"BNAME":"PATNA","ACCOUNT_NO":"103","ACCOUNT_TYPE":"SAVING","ACCOUNT_BALANCE":"45000","TID":"GHI","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"4000"},
+... {"CID":"4","CNAME":"AMAR","BID":40,"BNAME":"BANGLORE","ACCOUNT_NO":"104","ACCOUNT_TYPE":"CURRENT","ACCOUNT_BALANCE":"55000","TID":"JKL","TRANSACTION_TYPE":"WITHDRAWL","TRANSACTION_AMOUNT":"8000"},
+... {"CID":"5","CNAME":"MEHUL","BID":50,"BNAME":"MUMBAI","ACCOUNT_NO":"105","ACCOUNT_TYPE":"SAVING","ACCOUNT_BALANCE":"65000","TID":"MNO","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"1000"},
+... {"CID":"5","CNAME":"MEHUL MATHUR","BID":50,"BNAME":"MUMBAI","ACCOUNT_NO":"105","ACCOUNT_TYPE":"SAVING","ACCOUNT_BALANCE":"65000","TID":"MNO","TRANSACTION_TYPE":"DEPOSIT","TRANSACTION_AMOUNT":"1000"},
+... {"CID":"6","CNAME":"SOOD","BID":60,"BNAME":"CHENNAI","ACCOUNT_NO":"106","ACCOUNT_TYPE":"CURRENT","ACCOUNT_BALANCE":"75000","TID":"PQR","TRANSACTION_TYPE":"WITHDRAWL","TRANSACTION_AMOUNT":"500"}]);
 {
         "acknowledged" : true,
         "insertedIds" : [
-                ObjectId("619b659d02df16c2070ac75c"),
-                ObjectId("619b659d02df16c2070ac75d"),
-                ObjectId("619b659d02df16c2070ac75e"),
-                ObjectId("619b659d02df16c2070ac75f"),
-                ObjectId("619b659d02df16c2070ac760")
+                ObjectId("62151f43d9ca3c5f92a69d26"),
+                ObjectId("62151f43d9ca3c5f92a69d27"),
+                ObjectId("62151f43d9ca3c5f92a69d28"),
+                ObjectId("62151f43d9ca3c5f92a69d29"),
+                ObjectId("62151f43d9ca3c5f92a69d2a"),
+                ObjectId("62151f43d9ca3c5f92a69d2b"),
+                ObjectId("62151f43d9ca3c5f92a69d2c"),
+                ObjectId("62151f43d9ca3c5f92a69d2d"),
+                ObjectId("62151f43d9ca3c5f92a69d2e")
         ]
 }
-> db.shipment.find().pretty();
+> db.bank.find().pretty();
 {
-        "_id" : ObjectId("619b659d02df16c2070ac75c"),
-        "PNO" : 11,
-        "PNAME" : "bolts",
-        "COLOUR" : "Black",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 45,
-        "DATE" : "2017-09-25"
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d26"),
+        "CID" : "1",
+        "CNAME" : "ADITYA",
+        "BID" : 10,
+        "BNAME" : "AGRA",
+        "ACCOUNT_NO" : "101",
+        "ACCOUNT_TYPE" : "SAVING",
+        "ACCOUNT_BALANCE" : "25000",
+        "TID" : "ABC",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "2000"
 }
 {
-        "_id" : ObjectId("619b659d02df16c2070ac75d"),
-        "PNO" : 12,
-        "PNAME" : "nuts",
-        "COLOUR" : "Black",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 38,
-        "DATE" : "2017-09-28"
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d27"),
+        "CID" : "1",
+        "CNAME" : "ADITYA KUMAR",
+        "BID" : 10,
+        "BNAME" : "AGRA",
+        "ACCOUNT_NO" : "101",
+        "ACCOUNT_TYPE" : "CURRENT",
+        "ACCOUNT_BALANCE" : "25000",
+        "TID" : "ABC",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "2000"
 }
 {
-        "_id" : ObjectId("619b659d02df16c2070ac75e"),
-        "PNO" : 13,
-        "PNAME" : "chain",
-        "COLOUR" : "white",
-        "WNO" : 97,
-        "WNAME" : "DEF",
-        "QUANTITY" : 68,
-        "DATE" : "2017-08-28"
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d28"),
+        "CID" : "2",
+        "CNAME" : "AGAM",
+        "BID" : 20,
+        "BNAME" : "DELHI",
+        "ACCOUNT_NO" : "102",
+        "ACCOUNT_TYPE" : "CURRENT",
+        "ACCOUNT_BALANCE" : "35000",
+        "TID" : "DEF",
+        "TRANSACTION_TYPE" : "WITHDRAWL",
+        "TRANSACTION_AMOUNT" : "5000"
 }
 {
-        "_id" : ObjectId("619b659d02df16c2070ac75f"),
-        "PNO" : 14,
-        "PNAME" : "bolts",
-        "COLOUR" : "Black",
-        "WNO" : 88,
-        "WNAME" : "PQR",
-        "QUANTITY" : 10,
-        "DATE" : "2017-01-25"
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d29"),
+        "CID" : "3",
+        "CNAME" : "AKSHAT",
+        "BID" : 30,
+        "BNAME" : "PATNA",
+        "ACCOUNT_NO" : "103",
+        "ACCOUNT_TYPE" : "SAVING",
+        "ACCOUNT_BALANCE" : "45000",
+        "TID" : "GHI",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "4000"
 }
 {
-        "_id" : ObjectId("619b659d02df16c2070ac760"),
-        "PNO" : 19,
-        "PNAME" : "wheel",
-        "COLOUR" : "Blue",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 54,
-        "DATE" : "2017-01-01"
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d2a"),
+        "CID" : "3",
+        "CNAME" : "AKSHAT SAXENA",
+        "BID" : 30,
+        "BNAME" : "PATNA",
+        "ACCOUNT_NO" : "103",
+        "ACCOUNT_TYPE" : "SAVING",
+        "ACCOUNT_BALANCE" : "45000",
+        "TID" : "GHI",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "4000"
+}
+{
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d2b"),
+        "CID" : "4",
+        "CNAME" : "AMAR",
+        "BID" : 40,
+        "BNAME" : "BANGLORE",
+        "ACCOUNT_NO" : "104",
+        "ACCOUNT_TYPE" : "CURRENT",
+        "ACCOUNT_BALANCE" : "55000",
+        "TID" : "JKL",
+        "TRANSACTION_TYPE" : "WITHDRAWL",
+        "TRANSACTION_AMOUNT" : "8000"
+}
+{
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d2c"),
+        "CID" : "5",
+        "CNAME" : "MEHUL",
+        "BID" : 50,
+        "BNAME" : "MUMBAI",
+        "ACCOUNT_NO" : "105",
+        "ACCOUNT_TYPE" : "SAVING",
+        "ACCOUNT_BALANCE" : "65000",
+        "TID" : "MNO",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "1000"
+}
+{
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d2d"),
+        "CID" : "5",
+        "CNAME" : "MEHUL MATHUR",
+        "BID" : 50,
+        "BNAME" : "MUMBAI",
+        "ACCOUNT_NO" : "105",
+        "ACCOUNT_TYPE" : "SAVING",
+        "ACCOUNT_BALANCE" : "65000",
+        "TID" : "MNO",
+        "TRANSACTION_TYPE" : "DEPOSIT",
+        "TRANSACTION_AMOUNT" : "1000"
+}
+{
+        "_id" : ObjectId("62151f43d9ca3c5f92a69d2e"),
+        "CID" : "6",
+        "CNAME" : "SOOD",
+        "BID" : 60,
+        "BNAME" : "CHENNAI",
+        "ACCOUNT_NO" : "106",
+        "ACCOUNT_TYPE" : "CURRENT",
+        "ACCOUNT_BALANCE" : "75000",
+        "TID" : "PQR",
+        "TRANSACTION_TYPE" : "WITHDRAWL",
+        "TRANSACTION_AMOUNT" : "500"
 }
 
-a.Find the parts shipped from warehouse :"ABC"
+1. Find the branch name for a given Branch_ID.
+> db.bank.find({"BID":50},{"BNAME":1,"_id":0}).pretty();
+{ "BNAME" : "MUMBAI" }
+{ "BNAME" : "MUMBAI" }
 
-> db.shipment.find({"WNAME":'ABC'}).pretty();
-{
-        "_id" : ObjectId("619b659d02df16c2070ac75c"),
-        "PNO" : 11,
-        "PNAME" : "bolts",
-        "COLOUR" : "Black",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 45,
-        "DATE" : "2017-09-25"
-}
-{
-        "_id" : ObjectId("619b659d02df16c2070ac75d"),
-        "PNO" : 12,
-        "PNAME" : "nuts",
-        "COLOUR" : "Black",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 38,
-        "DATE" : "2017-09-28"
-}
-{
-        "_id" : ObjectId("619b659d02df16c2070ac760"),
-        "PNO" : 19,
-        "PNAME" : "wheel",
-        "COLOUR" : "Blue",
-        "WNO" : 99,
-        "WNAME" : "ABC",
-        "QUANTITY" : 54,
-        "DATE" : "2017-01-01"
-}
 
-b.List the total quantity supplied from each warehouse 
+2. List the total number of accounts for each customer.
+> db.bank.aggregate([{$group:{"_id":"$CID",count:{$sum:1}}}]);
+{ "_id" : "2", "count" : 1 }
+{ "_id" : "1", "count" : 2 }
+{ "_id" : "4", "count" : 1 }
+{ "_id" : "6", "count" : 1 }
+{ "_id" : "3", "count" : 2 }
+{ "_id" : "5", "count" : 2 }
 
->db.SHIPMENT.aggregate([{ $group:{_id:"$WNAME",total:{$sum:"$QUANTITY"}}}])
-
-{ "_id" : "PQR", "total" : 10 }
-{ "_id" : "DEF", "total" : 68 }
-{ "_id" : "ABC", "total" : 137 }
 
 5.Create the below tables, insert suitable tuples and perform the following operations using  MongoDB
 BOOK (ISBN, TITLE, AUTHOR, PUBLISHER)
